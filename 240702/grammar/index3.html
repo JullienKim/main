@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        counter-increment: rint;
+      }
+      p::before {
+        content: counter(rint) ". ";
+      }
+      p::after {
+        content: " - " attr(data-page) " page";
+      }
+      p::first-line{
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lrem Ipsum</h1>
+    <p data-page="52">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium est
+      architecto atque similique aspernatur beatae tempore quasi eveniet ut. A
+      et accusantium sint repellat blanditiis enim velit molestiae quia magnam?
+      Reiciendis alias eum nemo iste commodi praesentium debitis facere, aliquid
+      obcaecati quia consequuntur ipsum asperiores. Exercitationem veritatis
+      illo et, dolores in nemo! Ab nam debitis magni non! Porro, illo quasi!
+    </p>
+    <p data-page="273">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde quaerat
+      obcaecati, asperiores vero blanditiis inventore magni similique quis
+      accusantium eos, odio perferendis vitae magnam? Perferendis ab dolorem ad
+      nihil fugit. Ullam quis quos, temporibus praesentium voluptates voluptatem
+      molestiae iure? Cum ducimus sit corrupti sint dolores. Impedit, cupiditate
+      rem non, quidem eligendi ipsum aliquam accusantium reprehenderit voluptate
+      nesciunt amet vel recusandae! Perferendis aliquid tempore quis
+      voluptatibus dolorem fugiat sint sed obcaecati tempora numquam totam ut
+      fugit, cum quo provident eveniet qui reiciendis veniam vitae porro
+      assumenda deleniti corrupti. Veritatis, ipsa error. Similique debitis
+      nihil id eveniet. Voluptatibus officiis voluptate pariatur unde omnis
+      beatae minus hic repellendus soluta! Repellat fugiat, ea nisi, illum
+      labore eum rem sed iure numquam dolor corrupti odio.
+    </p>
+  </body>
+</html>

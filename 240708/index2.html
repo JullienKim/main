@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      position:relative;
+      #box{
+        position: relative;
+        width:200px;
+        height: 200px;
+        border-radius: 50%;
+        background: linear-gradient(#cb60b3, #db36a4);
+        text-align: center;
+        /* animation: rint;
+        animation-duration: 2s;
+        animation-timing-function: linear; */
+        animation: rint 2s linear;
+        h1{
+          line-height: 200px;
+          color: #fff;
+        }
+      }
+    }
+
+    @keyframes rint{
+      from/*0%*/{
+        left: 0;
+      }
+      50%{
+        left: 500px;
+      }
+      to/*100%*/{
+        left: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="class">
+    <h1>Rotation</h1>
+  </div>
+</body>
+</html>
