@@ -1,0 +1,57 @@
+/* Basic styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+#card_container {
+  position: sticky;
+  top: 20px; /* Adjust the top position as needed */
+  background-color: #fff;
+  padding: 20px;
+  display: none; /* Initially hide the card container */
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card_name {
+  text-align: center;
+}
+
+.card_contact {
+  margin-top: 10px;
+}
+
+.contact_button {
+  display: flex;
+  justify-content: center;
+}
+
+.btn_img {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+}
+
+/* Button styles */
+#toggleButton {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}

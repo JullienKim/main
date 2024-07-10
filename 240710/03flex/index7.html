@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        header {
+          background: pink;
+          height: 10vh;
+        }
+        section {
+          border: 5px solid #0f0;
+          display: flex;
+          height: 80vh;
+          div {
+            &:nth-child(1){
+              background: #eee;
+            }
+            &:nth-child(2){
+              background: #ddd;
+            }
+            &:nth-child(3){
+              background: #bbb;
+            }
+          }
+        }
+        footer {
+          background: gray;
+          height: 10vh;
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header>Header</header>
+      <section>
+        <div>Nav</div>
+        <div>Article</div>
+        <div>Aside</div>
+      </section>
+      <footer>Footer</footer>
+    </main>
+  </body>
+</html>
