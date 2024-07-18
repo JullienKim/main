@@ -64,3 +64,9 @@ $(".myslider").slick({
     },
   ],
 });
+
+
+//scrollTo
+$(".gototop").click(function() {
+  $.scrollTo(this.hash || 0, 800);
+})
