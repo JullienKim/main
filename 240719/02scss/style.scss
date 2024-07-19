@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$color: pink;
+$sizeB: 40px;
+$sizeS: 30px;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  .container {
+    justify-content: center;
+    .heart {
+      .circle1 {
+        height: $sizeB;
+        width: $sizeB;
+      }
+      .circle2 {
+        height: $sizeB;
+        width: $sizeB;
+      }
+      .square {
+        height: $sizeB;
+        width: $sizeB;
+        background-color: $color;
+        box-shadow: 0 0 20px $color;
+        transform: rotate(45deg);
+      }
+    }
+    animation: BigSmall 5s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes BigSmall {
+  0%,
+  100% {
+    width: $sizeB;
+  }
+  50% {
+    width: $sizeS;
+  }
+}

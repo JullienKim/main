@@ -1,0 +1,34 @@
+$color: (
+  wh: #fff,
+  bl: blue,
+);
+
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  color: map-get($color, wh);
+  ul {
+    display: flex;
+    gap: 10px;
+    span {
+      border: 1px solid map-get($color, wh);
+      // box-shadow: 0 0 5px map-get($color, bl);
+      border-radius: 5px;
+    }
+  }
+}

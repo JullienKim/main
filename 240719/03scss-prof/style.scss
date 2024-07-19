@@ -1,0 +1,71 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+$color: (
+  item-color: #74b9ff,
+  bg-dark-color: #000,
+  bg-light-color:#fff,
+  bg-item-color: #111,
+  bg-item-border: #222,
+);
+
+$item-size: 100px;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: map-get($color, bg-dark-color);
+  height: 100vh;
+  color: map-get($color, bg-light-color);
+  .icons {
+    display: flex;
+    gap: 20px;
+    li {
+      label{
+        input[type="checkbox"]{
+          opacity:0;
+          &:checked + div {
+            border:none;
+            box-shadow: 0 0 ($item-size /10) map-get($color, item-color);
+          }
+          &:checked + div span {
+            text-shadow: 0 0 ($item-size /10) map-get($color, item-color);
+          }
+        }
+        div{
+          // border: 1px solid map-get($color, bg);
+          // box-shadow: 0 0 5px map-get($color, bl);
+          width: $item-size;
+          height: $item-size;
+          background: map-get($color, bg-item-color);
+          border: 1px solid;
+          border-radius: $item-size/10;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor:pointer;
+          // display: grid;
+          // justify-content: center;
+          // align-items: center;
+          transition: all 0.3s;
+          span{
+            font-size: $item-size/2;
+
+          }
+        }
+      }
+    }
+  }
+}
