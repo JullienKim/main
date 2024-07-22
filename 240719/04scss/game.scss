@@ -1,0 +1,21 @@
+@import "./reset.scss";
+
+$main-color: #55b2d4;
+$accent-color: #ffe400;
+
+.game_lotto_number{
+  position: relative;
+  background: $accent-color;
+  margin: 5px 0;
+  padding: 4px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  span{
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0,0,0,0.5);
+  }
+}
+.wrapper_lotto_btn{
+  position: relative;
+  @include buttonType;
+}

@@ -3,9 +3,9 @@
 
 // built-in-function
 $color: (
-  bg-dark-color:#000,
+  bg-dark-color: #000,
   bg-light-color: #fff,
-  bg-gray-color:#808080,
+  bg-gray-color: #808080,
   accent-color: #dc143c,
   theme-color: #55b2e4,
 );
@@ -27,7 +27,7 @@ $size: 14px;
     position: relative;
     .wrapper {
       display: flex;
-      padding: 30px;
+      padding: 36px;
     }
   }
 }
@@ -43,7 +43,7 @@ $size: 14px;
   .wrapper_left_header {
     width: 100%;
     height: 30px;
-    font-size: map-get($size, small-size);
+    font-size: $size;
     display: flex;
     justify-content: center;
     .zero {
@@ -53,27 +53,26 @@ $size: 14px;
   .wrapper_left_body {
     display: flex;
     flex-direction: column;
-    padding: 18px;
     gap: 20px;
     height: 100%;
     width: 100%;
-    border: 1px solid gray;
+    border: 1px solid map-get($color, bg-gray-color);
     border-radius: 15px;
-    padding: 18px;
-    .left_body_header{
+    padding: 26px;
+    .left_body_header {
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      .left_body_header_gray{
+      .left_body_header_gray {
         width: 148px;
         height: 133px;
         background: url("/contents/iu.jpg") center/cover no-repeat;
       }
-      .left_body_header_line{
+      .left_body_header_line {
         border-top: 1px dotted map-get($color, bg-dark-color);
         margin: 12px 0;
-        width: 90%;
+        width: 100%;
       }
     }
     .left_body_profile {
@@ -83,15 +82,17 @@ $size: 14px;
       flex-direction: column;
       gap: 18px;
       .profile_detail {
-
+        display: flex;
+        align-items: center;
+        gap: 6px;
       }
     }
-    .left_body_footer{
-      .wrapper_feel{
+    .left_body_footer {
+      .wrapper_feel {
         display: flex;
         flex-direction: column;
         gap: 6px;
-        .feel_title{
+        .feel_title {
           font-weight: bold;
         }
       }
@@ -100,31 +101,31 @@ $size: 14px;
 }
 
 // wrapper_right
-.wrapper_right{
+.wrapper_right {
   width: 524px;
   height: 472px;
   padding: 0 5px;
   display: flex;
   flex-direction: column;
-  gap:8px;
-  .wrapper_right_header{
+  gap: 7px;
+  .wrapper_right_header {
     display: flex;
     justify-content: space-between;
-    color: map-get($color,theme-color);
-    .right_header_title{
+    color: map-get($color, theme-color);
+    .right_header_title {
       font-weight: bold;
     }
-    .right_header{
+    .right_header {
       font-size: $size;
     }
   }
-  .wrapper_right_body{
-    width:100%;
+  .wrapper_right_body {
+    width: 100%;
     height: 445px;
     border: 1px solid map-get($color, bg-gray-color);
     border-radius: $size/2;
     background: map-get($color, bg-light-color);
-    iframe{
+    iframe {
       width: 100%;
       height: 100%;
       border: none;
@@ -134,7 +135,7 @@ $size: 14px;
 }
 
 // navigation
-.navigation{
+.navigation {
   width: 70px;
   height: 110px;
   position: absolute;
@@ -143,7 +144,7 @@ $size: 14px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  .navigation_item{
+  .navigation_item {
     width: 100%;
     height: 33px;
     background: map-get($color, theme-color);
@@ -152,7 +153,7 @@ $size: 14px;
     line-height: 30px;
     border-radius: 0 10px 10px 0;
     font-size: $size;
-    border: 1px solid map-get(color, bg-dark-color );
+    border: 1px solid map-get($color, bg-dark-color);
     cursor: pointer;
   }
 }
