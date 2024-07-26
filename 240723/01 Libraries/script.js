@@ -1,4 +1,4 @@
-// Slick Slider
+// Slick Slider : History
 $(".history-slider").slick({
   dots:true,
   infinite: true,
