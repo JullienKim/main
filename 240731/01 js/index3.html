@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./script3.js"></script>
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        main {
+          flex-direction: column;
+          section {
+            display: flex;
+            align-items: center;
+            img {
+              height: 100%;
+              margin: 20px;
+            }
+            form {
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              div{
+                margin: 10px;
+              }
+              button {
+                border: 1px solid #ccc;
+                padding: 10px 50px;
+                margin: 10px;
+              }
+            }
+          }
+          .desc{
+            font-size: 1.5rem;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="calc">
+        <img src="./Aliexpress_logo.svg 1.png" alt="ali_logo" />
+        <form name="calc_form" action="http://127.0.0.1:5503" method="get">
+          <div>원래가격<input type="text" name="orig" class="orig" />원</div>
+          <div>할인율<input type="text" name="sale" class="sale" />%</div>
+          <button>할인 가격 계산하기</button>
+        </form>
+      </section>
+      <section class="desc"></section>
+    </main>
+  </body>
+</html>
