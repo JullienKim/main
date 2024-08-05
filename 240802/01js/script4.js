@@ -25,4 +25,22 @@ select.addEventListener("change", function () {
   ErrorEvent(`${selectedText}를 선택하셨습니다! 가격은 5,000원입니다.`);
 });
 
-const checkBox = document.querySelector("input[name='alarm']:checked");
+const radioBOx = document.querySelector("input[name='userAge]");
+radioBOx.forEach((item) => {
+  item.addEventListener("change", (e) => {
+    const target = e.target;
+    if (target.checked) {
+      alert(`당신의 연령은 ${target.value}대 입니다!`);
+    }
+  });
+});
+
+const checkBox = document.querySelectoAll("input[name='alarm']:checked");
+checkBod.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    const target = e.target;
+    if (target.checked) {
+      alert(`당신의 은 ${target.value}입니다!`);
+    }
+  });
+});
