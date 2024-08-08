@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="./style3.css"> -->
+    <script defer src="./script.js"></script>
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      ul,
+      li {
+        list-style: none;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        gap: 60px;
+        #container {
+          display: flex;
+          flex-direction: column;
+          width: 500px;
+          gap: 20px;
+          h1 {
+            font-size: 2.7rem;
+          }
+          form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 20px;
+            ul {
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              li {
+                display: flex;
+                font-size: 2rem;
+                label {
+                  flex: 1;
+                }
+                input[type="text"] {
+                  border: 1px solid #000;
+                  outline: none;
+                  flex: 3;
+                  &:focus{
+                    /* value */
+                  }
+                }
+              }
+            }
+            input[type="submit"] {
+              width: 100%;
+              padding: 1.5rem;
+              font-size: 1.5rem;
+            }
+          }
+        }
+        #stdList{
+          display: flex;
+          flex-direction: column;
+          width: 500px;
+          font-size: 1.5rem;
+          li{
+            display: flex;
+            width: 100%;
+            border-collapse: collapse;
+            span{
+              width: 100%;
+              border: 1px solid #ddd;
+              padding: 20px;
+              justify-content: center;
+              text-align: center;
+              &:nth-child(1){
+                flex:1
+              }
+              &:nth-child(2){
+                flex: 2;
+              }
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>😎 부트캠프 참가자 명단</h1>
+      <form action="local:5500" method="get">
+        <ul id="partcInfo">
+          <li>
+            <label for="name">이 름</label>
+            <input type="text" name="name" id="name" value="ex.홍길동"/>
+          </li>
+          <li>
+            <label for="major">전 공</label>
+            <input type="text" name="major" id="major" value="ex.지리학과" />
+          </li>
+        </ul>
+        <input type="submit" value="등록하기" class="btn" />
+      </form>
+    </div>
+    <ul id="stdList">
+      <li><span><b>이름</b></span><span><b>전공</b></span></li>
+    </ul>
+  </body>
+</html>
