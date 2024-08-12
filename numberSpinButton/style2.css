@@ -1,0 +1,63 @@
+body {
+  background: #ECEFF1;
+}
+
+.input-box {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: auto;
+  max-width: 600px;
+  width: 100%; height: 60px;
+
+  &:before {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    color: #ECEFF1;
+    font-size: 20px;
+    content: "▲";
+    pointer-events: none;
+  }
+  
+  &:after {
+    position: absolute;
+    bottom: 8px;
+    right: 20px;
+    color: #ECEFF1;
+    font-size: 20px;
+    content: "▼";
+    pointer-events: none;
+  }
+  
+  .input {
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto 40px;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 60px 20px 20px;
+    width: 100%; height: 60px;
+    font: 20px "Avenir Next";
+    box-shadow: 0 0 2px rgba(0, 0, 0, .5) inset;
+    -webkit-appearance: none;
+    
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-inner-spin-button {
+      position: absolute;
+      top: 0; bottom: 0;
+      right: 0;
+      margin: auto;
+      transform: scale(5);
+      transform-origin: right center;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+    &::-webkit-contacts-auto-fill-button {
+      opacity: 0;
+    }
+  }
+}

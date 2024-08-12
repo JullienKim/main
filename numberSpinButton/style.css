@@ -1,0 +1,17 @@
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: inner-spin-button; /* Use the default appearance */
+    margin: 0; /* You can still adjust margins */
+}
+
+/* You can still customize the background color */
+input[type="number"]::-webkit-outer-spin-button {
+    background-color: #ff0000; /* Only a subtle change */
+    border: 1px solid #ff0000;
+}
+
+/* Adjust dimensions */
+input[type="number"]::-webkit-inner-spin-button {
+    width: auto;
+    height: auto;
+}
