@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./script1.js"></script>
+    <title>Document</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: 0;
+      }
+
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+<main class="container">
+      <form action="localhost:5500" method="get">
+        <label for="userEmail"
+          ><input
+            type="email"
+            name="userEmail"
+            placeholder="이메일 주소를 입력하세요"
+            id="userEmail"
+        /></label>
+        <input type="submit" value="입력">
+      </form>
+      <div id="result">abc@naver.com</div>
+</main>
+  </body>
+</html>
