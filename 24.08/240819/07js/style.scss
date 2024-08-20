@@ -121,7 +121,7 @@ body {
     &:hover.controls {
       transform: translateY(0);
     }
-    &:hover .circle {
+    &:hover .controls .progress .bar .circle {
       opacity: 1;
     }
   }

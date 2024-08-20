@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./script.js"></script>
+    <title>Document</title>
+    <style>
+      body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: url(./background.jpg);
+        main{
+          display: flex;
+          flex-direction: column;
+          
+          text-align: center;
+          height: 50vh;
+          background: #00000079;
+          .userInput{
+            display: flex;
+            align-items: center;
+            background: #000;
+            color: #fff;
+            border-radius: 10px;
+            padding: 15px 200px;
+            margin: 15px 100px;
+            gap: 10px;
+            input[type="number"]{
+              height: 30px;
+            }
+          }
+          .result{
+            color: #fff;
+            h1{
+              font-size: 65px;
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="container">
+      <div class="userInput">
+        <h3>User Id</h3>
+        <input type="text" name="number" id="number">
+        <!-- <input type="number" name="number" id="number" /> -->
+      </div>
+      <div >
+        <h1 class="result">동물</h1>
+      </div>
+    </main>
+  </body>
+</html>
