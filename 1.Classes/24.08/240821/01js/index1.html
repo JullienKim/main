@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./script1.js"></script>
+    <link rel="stylesheet" href="./style1.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="container">
+      <h1>입력폼</h1>
+      <form action="localhost:5500" method="get" class="box">
+        <h3>전화번호를 입력해주세요.</h3>
+        <!-- <input type="number" name="" id=""> -->
+        <input
+          type="text"
+          placeholder="010-1234-5678 또는 011-123-4567 형식으로 입력해주세요"
+        />
+        <p id="warningMessage">*전화번호의 형식에 맞춰 입력해주세요.</p>
+      </form>
+        <div id="buttons">
+          <button id="cancel">취소</button>
+          <button id="submit">전송</button>
+        </div>
+    </main>
+  </body>
+</html>

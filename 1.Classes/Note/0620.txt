@@ -1,0 +1,42 @@
+http://localhost:3000/?search=쿠킹클래스
+https://
+localhost 도메인
+3000 포트
+/? 쿼리
+
+인코딩/디코딩
+
+복잡해보이는 문제도 쪼개서 해결한다
+
+Chrome Web Store
+page ruler
+mobile simulater
+
+콜백함수-함수가 인자값을 받는다
+
+
+1.기초방법:
+-프로그래밍 언어:배열!!
+값을 순서르르 매겨서 저장해놓은 데이터 공간
+-Iterable: 본인의 데이터 공간에 들어온 자식요소들을 하나씩 가져와서 반복적으로 무언가를 실행시켜줄 수 있는 자료형태!!
+-반복문 => 반복!!
+-Map / Set: Lotto/같은 번호 금지
+
+2. 
+
+background-image => js를 통해 가져옴
+background-size
+background-position
+
+=>축약
+background
+
+stack:설거지/엘리베이터
+대괄호 배열
+
+인덱스 값: 0/1/2/
+파일이름: 1/2/3
+
+인덱스 값 +1/전체총이미지 갯수
+
+단락회로평가

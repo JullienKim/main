@@ -1,0 +1,29 @@
+Generative AI(chat GPT)- 스마트하게 활용
+-코드 작성시 에러혹은 문제를 만났을 때 최소 스스로 1번 고민
+-AI를 사용했을시 최소
+
+ul.lnb>(li>a{뉴스$})*3
+
+              <ul class="lnb">
+                <li>
+                  <a href="">뉴스1</a>
+                </li>
+                <li>
+                  <a href="">뉴스2</a>
+                </li>
+                <li>
+                  <a href="">뉴스3</a>
+                </li>
+              </ul>
+
+  li.addEventListener("mouseover", () => {
+    console.log("mouseover ok!")
+  })
+
+GUI 방식:
+-graphic User Interface (*사용자로 하여금 눈에 보여지는 아이콘 혹은 이미지들을 제어할 수 있도록 만들어진 인터페이스 형식)
+CLI
+
+
+?-쿼리값
+&-앰퍼샌드=또다른 쿼리

@@ -1,0 +1,121 @@
+Microsoft Windows [Version 10.0.19042.631]
+(c) 2020 Microsoft Corporation. All rights reserved.
+
+C:\Users\EZEN>cd desktop
+
+C:\Users\EZEN\Desktop>cd Jullien
+
+C:\Users\EZEN\Desktop\Jullien>cd VS Code
+
+C:\Users\EZEN\Desktop\Jullien\VS Code>mkdir 0701
+
+C:\Users\EZEN\Desktop\Jullien\VS Code>cd 0701
+
+C:\Users\EZEN\Desktop\Jullien\VS Code\0701>mkdir typing
+
+C:\Users\EZEN\Desktop\Jullien\VS Code\0701>cd typing
+
+C:\Users\EZEN\Desktop\Jullien\VS Code\0701\typing>code .
+
+C:\Users\EZEN\Desktop\Jullien\VS Code\0701\typing>
+
+  div>h1{HTML5 Header}+div>ul>(li>a{Menu -$})*3+div>(div>h1+p)*2
+
+  header>h1.title{Lorem Ipsum}+div#nav>hq{navigation}
+
+
+rem-root element
+기본 16px
+
+flex로 1자로 만듬
+
+
+position: static/relative/absolute/fixed/sticky
+
+
+
+HTML5 어려워하는 이유!
+>공간분할테그
+block tag-한줄을 모두 가져가는 속성
+-div/header/h1/p
+-width&height&Margin&Padding 모두다 적용
+부모요소: ㅇ=display:flex
+
+inline tag-본인의 너비 밐 높이만큼 공간을 차지하는 속성
+-span/label/input
+w&h => x
+-m&p => 좌우측 적용가능 / 상하도
+
+inline-block-한줄에 정리 가능
+*Semantic Tag
+Semantic=의미를 갖고 있는
+
+header : 문서상에 헤더의 역할 => 머릿글 || 인트로 역할
+nav: GNB || LNB 와 같은 네비게이션 목록 역할
+aside: 사이드 측면 영역의 배너 혹은 비면 역할
+section: 실제 문서상의 본문 역할
+article : section 태그 안에 소단락(*세부영역) 나누는 역할
+footer: 문서상에 푸터의 역할 => 꼬리말 || 에필로그 역할
+
+
+CSS3
+=> Cascading Style Sheet
+=> 폭포수
+=> 모든 속성 => 상속 베이스
+
+3가지 방법
+
+1)인라인 스타일
+
+2)내부 스타일
+
+3)외부 스타일 (*실무)
+
+CSS3 선택자
+1. 전체선택자
+-wildcard 선택자
+-reset css
+-"*"
+
+2. 태그 선택자
+-h1, p 등 특정한 태그를 선택해서 스타일 적용
+
+3. 아이디 선택자
+-태그 중에 id 속성값을 가지고 있는 태그들에게 스타일을 적용
+-"#"
+-id 속성값은 반드시 1번만
+
+4. 클래스 선택자'
+-class 속성값을 가지고 있는 태그들에세 스타일 적용
+-"."
+-class 속성값은 여러번 사용 가능
+-반복적인 공통된 스타일
+
+5. 후손 선택자
+-부모 아래에 들어오는 모든 자식요소들
+-"띄어쓰기"
+
+6.자손 선택자
+-부모의 직계 자식요소
+-">"
+
+
+7.속성선택자
+안에 들어가있는 속성값에 따라 스타일 상이
+
+8. 동위 선택자
+-같을 동, 위치 위
+same-potition
+>같은 위치에 속해있는 요소들 간 스타일을 적용하고 싶을 때(형제요소들만)
+>특정 요소의 바로 뒤에 있는 형제: "+"
+>뒤에 있는 모든 형제:"~"
+
+9. 구조 선택자
+-일반구조선택자
+-속성구조선택자
+
+10.반응 선택자
+-사용자의 액션(이벤트) 실행 =>반응 일으킴(hover/active)
+
+11.상태 선택자
+-사영자의 이벤트 엑션을 통해서 특정 태그 밎 요소들의 상태사 변화되었다는 것을 감지하고 이를 통해서 스타일 적용

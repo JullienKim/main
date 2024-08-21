@@ -1,0 +1,20 @@
+
+
+폼태그-정보를 가져오기 위해 사용
+<form action="http://localhost:3000" method="get"> 
+"http://localhost:3000" 값을 여기로 보냄
+method="get" 정보값을 get 가져오다
+method="post" 정보값을(새로운 데이터를) post 삽입. ex댓글
+
+
+https://www.poscointl.com/index.html
+음악-> 숲
+
+https://www.lghnh.com/index.jsp
+지속가능한 미래-> 관심사
+
+https://jeongdong-culturenight.kr/kor/index.php
+왼쪽 플로팅
+
+https://datalab.samsungcard.com/
+타이핑 인터페이스

@@ -1,0 +1,60 @@
+보통 일반적으로 main 브랜치 설정 작업
+
+sideprojects => commit main
+
+Figma
+-auto
+-component/instance
+-prototype
+
+html5
+-태그
+-공간분할태그
+-semantic
+
+css3
+-선택자 13개
+-속성13개
+
+Layout
+-desktop Lofi wireframe
+-desktop Hifi wireframe
+
+css3_v2
+-transition
+=>css에서 반응선택자를 사용할 때 주로
+=> 반응 전후 >상태변화(즉각/시차)
+=>반응리 발생되기 정 단계에서 속성값을 적용!
+
+transition-duration:변형이 작동할 수 있는 기간 설정
+
+transition-delay
+
+transition-property
+
+transtion-timing-function
+
+font: style size/line-height family
+background:color, img position/size, repeat
+transition: property duration timing-function delay
+
+animation
+animation-duration
+animation-delay
+animation-timing-function
+amimation-direction: 애니매이션 실행 방향 설정 (기본은 좌에서 우로감)
+animation-name : 해당 애니메이션만의 고유한 이름 설정
+animation-iteration-count: 애니메이션을 얼만큼 반복하게 할 것인가
+
+
+-transform
+-3D 공간 개념
+-animation
+
+css3_v3
+-Flexable/responsive
+-flex/grid
+-media-query => device/break-point
+
+scss
+mix-in/include

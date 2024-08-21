@@ -1,0 +1,31 @@
+Lo-fi Wire frame
+=> Low Fidelity(품질/퀄리티)
+
+Hi-fi wireframe
+=> High Fidelity
+
+전체너비: 375 
+컨텐츠너비:327
+패딩: 48/2= 24
+
+component> 피그마 UI 작업> 개별적인 사이즈 변경을 최소화 + 통일감 있
+
+Instance>부모요소 Component design guide를 무조건 상속!
+
+Figma 핵심기능
+1 Auto Layout
+2 Layout Grid
+3 Component / instance
+4.Prototype
+5.Style Guide (Font/Color)
+6. Plugin (iconify / feather icons / unsplash)
+
+1)cammel 표기법:
+contentTitle
+2) sneak 표기법:
+content_title
+3) 헝가리언 표기법:
+ContentTitle
+
+Lorem
+

@@ -1,0 +1,53 @@
+html : 구조
+css : 스타일
+>transition / transform / animation
+js:동적인 페이지를 구현
+>DOM
+
+1. 각자의 전문성을 살려야한다.
+2. 자바스크립트x=자바
+3.자바스크립트=객체지향 프로그래밍 언어. 라이브러리&프레임워크.
+
+언어- 알고리즘&자료구조 토대로 무언가를 생성하고 만들어낼 수 있음.
+객체지향-객체(어떤 정보 및 데이터를 효율적으로 관리하기 위해서 만들어놓은 저장공간) 중심으로 데이터가 돌아감.
+
+fetching - html문서를 웹브라우저가 전단받아서 본인이 읽을 수 있는 형태로 변환시키는 작업
+
+parsing - html 문서를 웹브라우저가 실제로 읽어나가는 단계. 반드시 위에서 아래로 읽음. div*5 :position: absolute
+<script> in <body>/<script src>/ async,sync,defer=DOMContentLoaded
+
+1.변수-데이터를 담는 바구니. -var,let,const 3개의 키워드를 활용해서 변수 선언!
+2. 자료형
+>원시타입
+-숫자형 : number
+-문자형 : "" // '' // ``
+-논리형 : true / false
+-기타형 : null //undefined
+*템플릿 리터럴 : 변수안에 담긴 값 +문자열
+>참조타입
+-객체 : 단일값이 아닌, 복합적인 데이터 자료를 저장&보관, 
+    -배열 : 해당 자료형태안에 있는 모든 자식요소들에게 번호를 매길 수 있음. 해당번호의 할당된 값만 찾아올 수도 있고, 그 번호에 특정 값을 교체해서 넣을 수도 있음. 자식요소들이 각각의 번호를 갖고 있기 때문에  배열안에 담겨있는 총 자식의 개수도 파악가능. 1=>0,  2=>1
+        index value: numbering of child attr. it starts from 0. 
+        length value : number of child in  an array. the last index value of last child attr of an array is (total number of child-1).
+     -함수 : function // arrow
+     -심볼 : 유일값을 생성하여 부여함.
+
+*형변환
+1.숫자- Number(): 숫자값으로 바꿔줌;parseInt() : 인자값으로 들어온 숫자를 정수로; parsefloat() : 인자값으로 들어온 숫자를 실수(소수점 단위를 나타내주는 숫자)로
+2.문자-
+
+3. 연산자
++-*/%:사칙연산
+비교연산자
+논리연산자(*참/거짓)
+-&&: and연산자
+>좌항 & 우항 모두 참이어야 최종결과값 true. ex:40대 남성
+||:or연산자
+>좌항&우향 둘 중에 하나만 참아도 true. ex: 40대 or 남성.
+4. 조건문
+~일때 뭐뭐뭐, 그게 아니면 뭐뭐뭐
+if문-단독으로 여러번 사용 가능.
+if else문- 조건식 true여야지만 실행. 그렇지 않은 경우 else
+else if문- 복수의 조건실을 따지고자 할 때
+삼항조건연산자
+switch문

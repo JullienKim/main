@@ -1,0 +1,42 @@
+MDN
+
+홀테그/싱글테그
+
+block tag 태생적으로 1개의행을 모두 차지하도록 만들어진 태그 <div>
+inline tag 본인이 작성된 width만큼만 공간을 차지하는 태그 <span>
+
+css 전후문자 선택자
+앞뒤 스타일
+before/after
+content:" " 속성 필수
+전이란 현재의 컨텐츠를 기준으로 앞에 오게끔 함(2차원적인 관점)
+
+웹디자이너가 준비한 이미지 사이즈와 실제 웹에서 적용하고자는 이미지가 정확하게 일치하는 경우: html > img tag
+사이즈가 안 맞는 경우: css
+
+웹이미지를 불러와서 사용= 필터를 적용하는 경우=이미지 위에 어떤 blur효과, opacity=html,img 태그
+
+        div.membership_menu>article.membership_type*2
+                div.membership_img+div.membership_info*
+
+       <div class="membership_menu">
+            <article class="membership_type">
+                <div class="membership_img"></div>
+                <div class="membership_info"></div>
+            </article>
+            <article class="membership_type"></article>
+
+
+                    div.membership_*3+button.membership
+
+                    <div class="membership_"></div>
+                    <div class="membership_"></div>
+                    <div class="membership_"></div>
+                    <button class="membership"></button>
+
+
+엠베센드
+position:relative 부모
+이미지 불러오는 거url var색깔
+
+  border:1px solid #f00;

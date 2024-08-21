@@ -1,0 +1,87 @@
+특정웹 페이지 내 죄상단 네비게이션 메뉴 > GNB: Global Navigation Banner
+LNB:Local Navigation Bar/Banner
+
+smart animate: 레이아웃 구조 및 이름을 절대 변경!!!(*처음 원본데이터를 생성 =>
+
+1)block 하나의 행 div
+2)inline 본인의 크기값만큼만 span
+3)inline-block 태생적으로 inline
+
+목록테그
+ul/ol
+
+unorder list 카운팅을 하지 않기 위한 목록 (90)
+orderlist 순차적으로 카운팅을 하기 위한 목록
+li 태그와 꼭 함께해야지만 목록기능을 제대로 쓸 수 있음
+중첩목록!!!
+
+8. 태이블태크
+-table/ tr(행)/ td(table date=열)
+th((table header)가장 되는 열
+table>(tr>td*2)*3
+<table>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+html5 문법> semantic 태그 (의미없이 사용하는 div 태그 지양)
+table> 어디서 부터인지 알려주는 태그 thead/tbody/tfoot
+colspan=열을 병합하는 기능! (본인을 포함해서 병함)
+프로그래밍 언어 입력에서 짝수는 even 홀수는 odd.
+row(행)을 그룹하는 것은 어렵지 않음=> tr/ thead ll tfoot
+column(열)을 그룹하는 것은 1가지 방법
+>colgroup>col: 몇개의 열을 선택!! => span
+
+table>(tr>td*2)*3
+<table>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+9. mark태그 : 택스트 뒷 배경컬러 (*형광)
+
+10. b태그: bold의 약자 => 택스트를 두껍게 해주는 테그
+
+11. figure&figcaption: 악어&악어새 공생관계
+-보통 일반적으로 테이블 태그 등을 사용할 때, 해당 요소의 타이틀을 정의하고자 할 떄
+
+생성형 AI = chat gpt, "스마트"하게 활용!!
+-code 작성 시, 에러 혹은 문제 봉착
+
+12. form 태그:
+-action 속성 & method 속성 갖고 있음
+-action : client(웹브라우저)로부터 특정 값을 받아서 server로 해당 값을 전송을 해야할 시, 전송할 위치 경로를 정의하는 속성
+-method: 사용자에게 값을 받아서 처리하는 방식을 어떻게 할 것인지 구분하기 위한 속성
+1)get: 사용자가 입력한 값을 서버에게 전달을 한 경우, 해당 값에 매칭되어지는 페이지를 서버가 반환하도록 하는 방식
+2)post:단순히 특정 페이지를 서버가 반환하도록 하는 method 방식 => 유튜브/ 댓글
+
+-입력양식 태그 같이 사용해야만 form 제기능을 할 수 있음
+-input type="text" : 아이디 및 텍스트 값을 받고자 할 떄 사용
+-input type="password":패스워드 같은 비밀스러운 값을 받고자 할 때
+-input type="radio" : 여러개 후보들 중에 1개를 선택하고자 할 떄
+-input type="checkbox" : 여러개 후보들을 동시에 선택하고자 할 때
+-input type="file" : 서버에 어떤 데이터를 업로드 하고자 할 때
+
+
+-sect 태그=>여러개의 옵션들 중에서 하나를 선택할 수 있도록 해주는 form 입력양식 태그. select 태그의 경우, 내부적으로 option 태그와 함께 사용해야만 정상적인 기능을 구현할 수 있음. (*tip, selected disabled 속성=option 태그 중에서 메뉴명으로는 출력이 되나, 실제 사용자가 선택하지 못하도록 설정)
+-optgroup 태그: option attribute들을 그룹화 하는 태그
+-form태그 내부 요소들을 하나로 그룹핑하고, 해당 요소들의 대표타이틀을 생성!!

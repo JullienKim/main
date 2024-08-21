@@ -1,0 +1,74 @@
+로컬
+-내컴퓨터
+원격
+-내컴퓨터 바깥에 있는 데이터 공간
+
+반응형 웹페이지
+
+toggle bottun-switch
+html, css, js- 웹에디터
+MS&VS Code
+
+VSC 기본  Extention  설정
+1.언어설정
+2. 프로그램 아이콘 테마-material 검색
+3. 배경화면 컬러 테마-One Dark
+4. Live Server: alt + l +o
+-명렁 프롬프트 cmd. ipv4주소
+5. 들려쓰기 설정 indent rainbow
+6. 시작과 끝 자동 설정Auto Rename tag
+-html=Hyper Text Markup Language
+7.Color Picker
+8.id와 class 오류 알리미HTML CSS Support
+9. css auto
+10. Code Runner
+11. Prettier
+Defort Formatter
+Format On Save
+Tab Size
+자동줄바꿈
+Word Wrap
+Mouse Wheel Zoom
+Auto Save Delay 500
+파일을 열 때 작업하고 있던 곳으로 데려다줌 Full Reload
+emmet:Variables ko
+
+
+
+
+html을 활용해서 coding을 시작할 때 뭐부터 하는가?
+detail한 것부터
+상위요소부터
+
+emmet
+
+ ul>(li>a{쿠킹클래스})*3
+온점=마침표
+cdn=Content delivery network
+
+<a=anchor?
+필수속성 href=hyper link
+id=이름  *중복된 이름은 오류를 내니 금지
+
+semantic tag
+html5
+nav
+
+컴퓨터 운영체제
+1. 연산작업 || 처리 : 2가지 => 0,1
+0 F 1 T 2진법
+bit: 컴뷰터가 처리하는 데이터의 최소한의 단위
+유의미한 데이터를 보관처리하는 단위 바이트
+8비트= 1 바이트
+2의 8승
+컬러 구현 및 출력:RGB = fff
+hex code= 6개코드 색깔
+
+255 255 255 => white
+0 0 0 => black
+
+인간: 10진법 => 10 진수
+컴퓨터: 16진수
+0123456789abcdef
+
+자식요소

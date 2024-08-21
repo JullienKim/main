@@ -1,0 +1,21 @@
+ 시간 내장 함수
+1)콜백함수를 사용할 수 있음
+2)this 객체를 사용했을 때, 지칭하는 것이
+
+setInterval() : 특정 시간에 맞춰서 무언가 반복적으로 자동으로 바뀜
+clearInterval(): setInterval의 효과를 없애줌
+
+
+1)innerHTML: html 요소 +text 모든걸 찾아올 때!
+>DOM에 있는 html 요소 + text
+
+2)
+
+3)textContent: innerHTML =>tag만 걷어냄
+
+가상클래스 : 스위치 역할
+>A면 불이 켜지고, B면 불이 꺼진다
+> 클래스가 적용되어 있으면 불이 켜지고 클래스가 사라지면 불이꺼진다
+
+classList(속성): 특정 노드에 class 여부.유무 체크
+contains(메서드):

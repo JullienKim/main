@@ -1,0 +1,83 @@
+늦게 오시는 거까지 제가 뭐라하는 게 아니에요
+타인한테 피해를 주는 거거든요
+스스로 복습을 안 하고
+옆사람한테 영향을 미칠 수 있는 행동은 가급적 안 해주셨으면 좋겠어요
+제발 지켜주셨으면 좊겠다 말씀을 드릴게요
+미션이나 과제를 최대한 열심히 해주셨으면 좋겠어요
+의미가 없습니다
+그런 생각이 듭니다
+다른 건 없습니다
+모든 수업 내용들
+Daily로 진행되어지는 수업내용은 git-hub에 올라올거애요
+질문이 많이 나올 수 있습니다
+AI가 정확하게 더 많은 
+기타 q&a는 slack을 통해서
+
+기회
+UI&UX도 잘 해야함
+
+Figma
+-UI&UX 협업 전문 툴
+UX=User Experience(사용자 경험)
+-반복적 일관적 메세지
+-충성고객
+-매출
+UI=User Interface (런칭 전 테스트)
+-UI 디자인
+-Before PSD/Sketch/Adobe XD/PPT
+
+Adobe 1월 인수결렬
+Figma 반유료화
+
+도화지=frame
+
+
+좌표
+-데카르트 좌표계-
+-웹좌표계=좌측상단 위에서 아래로 숫자가 늘어남
+
+직관적 레이어
+noto sans kr
+
+
+plug-in: 확장프로그램'
+unsplash
+feather icon
+
+Web Editor:html, css, js 등의 프로그래밍 혹은 스타일시드 언어를 보다 효율적으로 입력할 수 있도록 도와주는 툴!
+-Brackets/ 이클립스/파이참
+인텔리제이/ 프론트엔드 영역 90%
+vs code -> MS & Figma
+
+Coponent 작업
+-패턴/탬플릿 저장
+-개별적인 스타일(인스턴트) 선정
+-ex. 붕어방=인스턴스
+
+
+12숫자: 10과 가장 가까운 숫자 중에서 가장 많은 최대공약수를 가지고 있는 숫자
+
+웹 페이지 기획/구성 문법
+1. header
+2. main, slider
+3. section
+4. article
+5. footer
+
+How to insert a font into Figma?
+Client: 웹브라우저 >포털검색사이트
+Server: https://nexon.com
+
+f12, download, woff to ttf/otf
+woff: 로컬컴퓨더에 설지할 수 없는 확장자, 개발자가 페이지 구현할 때 설정하는 폰트
+ttf(true type font):애플&마크,2차 베지에 곡선, 가벼움,범용적인 문서 및 디자인작업, wds
+otf:어도비&마크, 3차 베지 곡선, 큰용량, 고화질 고출력 디자인작업, 윈도우 설치 가능, mac
+
+figma download
+
+숙제 git-hub 회원가입, Figma 복습
+
+Bree Serif
+noto
+nexon
+  border:1px solid #f00;

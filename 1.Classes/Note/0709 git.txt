@@ -1,0 +1,40 @@
+1.git-name : JullienKim
+2.git-email : jann21.llk@gmail.com
+3.git-repositoty : https://github.com/JullienKim/main.git
+
+1.로컬 컴퓨터 소유주 확인 및 변경!!!
+git config --list
+git config --global user.name "JullienKim"
+git config --global user.email "유저이메일"
+
+
+2.만약, 내 정보가 아닌 정보로 소유주 등록 => 변경!!!
+git config --unset --global user.name
+git config --unset --global user.email
+
+3.로컬 컴퓨터 > 루트 폴더 > git 초기화
+- git init / 최초 초기화 시, 한번만 입력!!!
+(*staging area => git 저장관리 공간 데이터를 commit 위한 전단계
+
+4.루트 폴더 & repository 연결
+- 최초 한번만 입력!!!
+- git remote add origin https://github.com/JullienKim/main.git
+- git remote -v
+
+-------------------
+매일 수업끝나면 해야할 일!!!!!
+
+5.git 및 git-hub에 commit
+- staging area 데이터 업로드
+- git add .
+- git status
+
+6.git에 commit 하기 위해서 메세지 (*라벨)
+- git commit -m "240709"
+
+7.git-hub commit
+- git push origin master
+
+8.CLI 방식으로 git data를 다운로드 하는 방법
+- git pull origin master
+- git clone origin master
