@@ -6,11 +6,11 @@ searchBtn.addEventListener("click", () => {
 });
 
 // closeBtn.addEventListener("click,");
-// document.querySelector(".close, section").forEach((item) => {
-//   item.addEventListener("click", () => {
-//     document.querySelector(".modal-search").classList.remove("active");
-//   });
-// });
+document.querySelector(".close, section").forEach((item) => {
+  item.addEventListener("click", () => {
+    document.querySelector(".modal-search").classList.remove("active");
+  });
+});
 
 // Search Bar
 const searchBar = document.querySelector(".search input[type='text']");
@@ -28,7 +28,7 @@ searchBar.addEventListener("blur", function () {
 const firstContent = document.querySelectorAll(".accordion .content");
 firstContent[0].style.display = "block";
 
-const titles = document.querySelectorAll("title");
+const titles = document.querySelectorAll(".title");
 titles.forEach((title) => {
   title.addEventListener("click", () => {
     document.querySelectorAll(".content").forEach((item) => {

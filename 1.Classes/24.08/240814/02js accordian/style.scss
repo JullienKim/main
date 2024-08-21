@@ -193,9 +193,8 @@ header {
         flex: 5;
         padding: 15px;
         padding-left: 30px;
-        bottom: none;
+        border: none;
         outline: none;
-        position: relative;
         &:focus {
           &::placeholder {
             opacity: 0;
@@ -217,7 +216,7 @@ header {
         transition: all 0.3s;
         cursor: pointer;
         &:hover {
-          opacity: 0;
+          opacity: 1;
         }
       }
     }
@@ -231,7 +230,7 @@ header {
       font-size: 1.2rem;
     }
     .hash-tag {
-      font-size: 14px;
+      font-size: 1rem;
       color: $main-hashtag-color;
       margin-top: 10px;
       opacity: 0;

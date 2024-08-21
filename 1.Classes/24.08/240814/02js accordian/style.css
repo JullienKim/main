@@ -175,9 +175,8 @@ header nav .search-box i {
   flex: 5;
   padding: 15px;
   padding-left: 30px;
-  bottom: none;
+  border: none;
   outline: none;
-  position: relative;
 }
 .modal-search .search form input[type=text]:focus::-moz-placeholder {
   opacity: 0;
@@ -207,7 +206,7 @@ header nav .search-box i {
   cursor: pointer;
 }
 .modal-search .search form input[type=submit]:hover {
-  opacity: 0;
+  opacity: 1;
 }
 .modal-search .search::before {
   content: "\f002";
@@ -219,7 +218,7 @@ header nav .search-box i {
   font-size: 1.2rem;
 }
 .modal-search .search .hash-tag {
-  font-size: 14px;
+  font-size: 1rem;
   color: #ff0;
   margin-top: 10px;
   opacity: 0;
