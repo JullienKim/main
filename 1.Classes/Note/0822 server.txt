@@ -1,0 +1,13 @@
+Server
+
+1)Client & Server connection: data connection
+2)Protocol => https || http
+3) Server &Client => records the way of communication
+-request//response Header
+-solid(physical?) area of server (java, python, c++)// web-browser(html,css,js)
+
+200: success
+
+4xx: irregular commad on server from client
+-wrong address
+-

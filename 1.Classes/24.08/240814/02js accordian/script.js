@@ -6,7 +6,7 @@ searchBtn.addEventListener("click", () => {
 });
 
 // closeBtn.addEventListener("click,");
-document.querySelector(".close, section").forEach((item) => {
+document.querySelectorAll(".close, section").forEach((item) => {
   item.addEventListener("click", () => {
     document.querySelector(".modal-search").classList.remove("active");
   });
