@@ -1,13 +1,38 @@
 Server
 
+
 1)Client & Server connection: data connection
+
 2)Protocol => https || http
+
 3) Server &Client => records the way of communication
 -request//response Header
--solid(physical?) area of server (java, python, c++)// web-browser(html,css,js)
+-solid area of server (java, python, c++)// web-browser(html,css,js)
+
+4) JSON(Javascript Object Notation(자바스크립트 객체 표기법))
+-A language that can be recognized/specified by both server and client.
+-Object-oriented language(객체 지향 언어)
+
+5)a effective method function to be used for managing both client and server.
+-JSON.stringify() = this is used when you change object form to json form. this function helps  changing data inside an object to letter form.
+-JSON.parse()= this method function is for converting json form to object form. It changes data from json to object form that allows web browsers to parse.
+
+6)How to call data from JSON? 
+-AJAX(Asynchronous JavaScript and XML(비동기적 자바스크립트와 XML))
+*XML
+
+
 
 200: success
 
 4xx: irregular commad on server from client
 -wrong address
--
+-right address, but wrong value
+
+5xx: client requested to server with a right code, but server doesn't response
+
+
+readyState
+- a data helps checking  status of client pulling json data from server.
+0: stage of client asked server a data and got a response message for corresponding request.
+1: stage of client asking server a data and it succeeded
