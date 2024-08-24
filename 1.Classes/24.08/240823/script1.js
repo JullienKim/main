@@ -1,4 +1,3 @@
-// done reviewing. start from script 2 0823.1616
 const display = (result) => {
   console.log(`${result} 준비 완료!`);
 };
