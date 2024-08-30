@@ -1,11 +1,14 @@
 import api from "./env.js";
 
+const form = document.querySelector("form");
+// console.log(form)
+
 const url = `https://api.themoviedb.org/3/movie/popular?api_key=${api.API_KEY}&language=ko&page=1`;
 
 const movieDetail = (e) => {
   const { id } = e.target.parentElement;
   const detailURL = `https://www.themoviedb.org/movie/${id}`;
-  window.open(detailURL, "_blank")
+  window.open(detailURL, "_blank");
 };
 
 const createBlock = ({
@@ -53,3 +56,32 @@ fetch(url)
       createBlock(movie);
     });
   });
+
+const removeAll = () => {
+  const movies = document.querySelectorAll(".movie");
+  movies.forEach((movie) => {
+    movie.remove();
+  });
+};
+const searchMovie = (e) => {
+  e.preventDefault();
+  // console.log("event");
+  const input = document.querySelector("input");
+  // console.log(input.value);
+  const { value: keyword } = input;
+  // console.log(keyword);
+  const searchURL = `https://api.themoviedb.org/3/search/movie?api_key=${api.API_KEY}&query=${keyword}&include_adult=false&language=en-US&page=1`;
+
+  if (keyword) {
+    removeAll();
+    fetch(searchURL)
+      .then((response) => response.json())
+      .then(({ results }) =>
+        results.forEach((movie) => {
+          createBlock(movie);
+        })
+      );
+  }
+};
+
+form.addEventListener("submit", searchMovie);
