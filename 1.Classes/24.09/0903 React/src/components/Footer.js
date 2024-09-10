@@ -10,7 +10,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer>
-      <h1>여기는 푸터입니다!</h1>
+      <h1>Footer</h1>
     </footer>
   );
 };

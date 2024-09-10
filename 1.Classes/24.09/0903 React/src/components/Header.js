@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header>
-      <h1>여기는 헤더입니다!</h1>
+      <h1>Header</h1>
     </header>
   );
 }
