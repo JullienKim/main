@@ -1,0 +1,37 @@
+PS C:\Users\EZEN\Desktop\Jullien\01.Master\1.Classes\24.09\0927a> npm create vite@latest
+√ Project name: ... packagetools
+? Select a framework: » - Use arrow-keys. Return to submit.
+>   Vanilla
+? Select a framework: » - Use arrow-keys. Return to submit.
+    Vanilla
+? Select a framework: » - Use arrow-keys. Return to submit.
+    Vanilla
+√ Select a framework: » React
+√ Select a variant: » TypeScript + SWC
+
+
+Done. Now run:
+
+  cd packagetools
+  npm install
+
+PS C:\Users\EZEN\Desktop\Jullien\01.Master\1.Classes\24.09\0927a> npm i styled-components
+
+added 22 packages in 2s
+
+4 packages are looking for funding
+PS C:\Users\EZEN\Desktop\Jullien\01.Master\1.Classes\24.09\0927a> npm @types/styled-components -d
+npm info using npm@10.2.4
+npm info using node@v20.11.0
+Unknown command: "types/styled-components"
+
+
+
+useState
+useRef
+useEffect
+useReducer
+useContext
+useCallback
+useMemo
+useMotionValue
