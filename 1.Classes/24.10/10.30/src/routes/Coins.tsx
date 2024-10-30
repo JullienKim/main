@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useQuery } from "@tanstack/react-query";
+import { fetchCoins } from "../api";
 // import { StringLiteral } from "typescript";
 // import { useParams } from "react-router-dom";
 
@@ -97,31 +99,36 @@ interface CoinInterface {
 }
 
 const Coins = () => {
-  const [coins, setCoins] = useState<CoinInterface[]>([]);
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    (async () => {
-      const response = await fetch(
-        "https://raw.githubusercontent.com/Divjason/coindata/refs/heads/main/coins.json"
-      );
-      const json = await response.json();
-      // console.log(json);
-      setCoins(json.slice(0, 101));
-    })();
-    // data();
-  }, []);
+  // const [coins, setCoins] = useState<CoinInterface[]>([]);
+  // const [loading, setLoading] = useState(false);
+  // useEffect(() => {
+  //   (async () => {
+  //     const response = await fetch(
+  //       "https://raw.githubusercontent.com/Divjason/coindata/refs/heads/main/coins.json"
+  //     );
+  //     const json = await response.json();
+  //     // console.log(json);
+  //     setCoins(json.slice(0, 101));
+  //   })();
+  //   // data();
+  // }, []);
   // const params = useParams();
   // console.log(params);
+  const { isLoading, data } = useQuery<CoinInterface[]>({
+    queryKey: ["allCoins"],
+    queryFn: fetchCoins,
+  });
+  console.log(isLoading, data);
   return (
     <Container>
       <Header>
         <Title>Coin List</Title>
       </Header>
-      {loading ? (
+      {isLoading ? (
         <Loader>"Loading..."</Loader>
       ) : (
         <CoinList>
-          {coins.map((coin) => (
+          {data?.slice(0, 100).map((coin) => (
             // <Coin key={coin.id}>{coin.name} &rarr</Coin>
             <Coin key={coin.id}>
               <Link to={`/${coin.id}`} state={`${coin.name}`}>
