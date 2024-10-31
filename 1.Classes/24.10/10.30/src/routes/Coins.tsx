@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useQuery } from "@tanstack/react-query";
 import { fetchCoins } from "../api";
 // import { StringLiteral } from "typescript";
 // import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import { isDarkAtom } from "../atoms";
+import { useSetRecoilState } from "recoil";
 
 const Container = styled.main`
   width: 100%;
@@ -17,6 +20,9 @@ const Container = styled.main`
 
 const Header = styled.header`
   font-size: 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 `;
 
 const Title = styled.h1`
@@ -33,14 +39,14 @@ const Coin = styled.li`
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 10px;
-  display: flex;
-  align-items: center;
+  font-size: 20px;
   cursor: pointer;
   a {
     display: flex;
     align-items: center;
     color: inherit;
     transition: color 0.3s;
+    margin: 0 10px;
     &:hover {
       color: ${(props) => props.theme.accentColor};
     }
@@ -55,7 +61,16 @@ const Loader = styled.span`
 const Img = styled.img`
   width: 35px;
   height: auto;
-  margin: 0 12px;
+  margin: 0 10px;
+`;
+
+const Button = styled.button`
+  background: ${(props) => props.theme.accentColor};
+  color: ${(props) => props.theme.bgColor};
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 `;
 
 // const coins = [
@@ -88,7 +103,7 @@ const Img = styled.img`
 //   },
 // ];
 
-interface CoinInterface {
+export interface CoinInterface {
   id: string;
   name: string;
   symbol: string;
@@ -100,7 +115,7 @@ interface CoinInterface {
 
 const Coins = () => {
   // const [coins, setCoins] = useState<CoinInterface[]>([]);
-  // const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(true);
   // useEffect(() => {
   //   (async () => {
   //     const response = await fetch(
@@ -118,11 +133,16 @@ const Coins = () => {
     queryKey: ["allCoins"],
     queryFn: fetchCoins,
   });
-  console.log(isLoading, data);
+  // console.log(isLoading, data);
+  const setterFn = useSetRecoilState(isDarkAtom);
   return (
     <Container>
+      <Helmet>
+        <Title>Coin List</Title>
+      </Helmet>
       <Header>
         <Title>Coin List</Title>
+        <Button onClick={() => setterFn((prev) => !prev)}>Mode</Button>
       </Header>
       {isLoading ? (
         <Loader>"Loading..."</Loader>
@@ -136,7 +156,7 @@ const Coins = () => {
                 <Img
                   src={`https://cryptoicon-api.pages.dev/api/icon/${coin.symbol.toLowerCase()}`}
                 />
-                {coin.name} ({coin.symbol}) &rarr; {coin.name} information
+                {coin.name} ({coin.symbol}) &rarr; {coin.name} Information
               </Link>
             </Coin>
           ))}
