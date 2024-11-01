@@ -25,6 +25,7 @@ interface Form {
   userName: string;
   passWord1: string;
   passWord2: string;
+  extraError?: string;
 }
 // Object.keys(temp1).join()
 // Object.values(temp1).map(v=> typeOf v).join
@@ -72,7 +73,7 @@ const ToDoList = () => {
         { shouldFocus: true }
       );
     }
-    setValue("userName");
+    setValue("userName", "");
     // setError("extraError",{message:nowLoading})
   };
   // console.log(formState.errors);
