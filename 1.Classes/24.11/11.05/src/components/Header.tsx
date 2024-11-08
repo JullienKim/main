@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion, useAnimation, useScroll } from "framer-motion";
-import { Link, useMatch } from "react-router-dom";
+import { Link, useMatch, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Nav = styled(motion.nav)`
   width: 100%;
@@ -45,7 +46,7 @@ const Item = styled.li`
   position: relative;
   transition: color 0.3s;
   &:hover {
-    color: ${(props) =>  props.theme.black.veryDark};
+    color: ${(props) => props.theme.black.veryDark};
   }
 `;
 
@@ -62,11 +63,11 @@ const Circle = styled(motion.span)`
   background: ${(props) => props.theme.red};
 `;
 
-const Search = styled.span`
+const Search = styled.form`
   color: ${(props) => props.theme.red};
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   position: relative;
   cursor: pointer;
   svg {
@@ -104,13 +105,29 @@ const logoVariants = {
 
 const SearchBar = styled.div``;
 
+interface Form {
+  keyword: string;
+}
+
 const Header = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const homeMatch = useMatch("/");
+  const modalMatch = useMatch("movies/*");
   const tvMatch = useMatch("/tv");
   const inputAnimation = useAnimation();
   const navAnimation = useAnimation();
   const { scrollY } = useScroll();
+  const main = useNavigate();
+
+  const goToMain = () => {
+    main("/");
+  };
+
+  const { register, handleSubmit, setValue } = useForm<Form>();
+  const onValid = ( data: Form ) => {
+    main(`/search?keyword=${data.keyword}`);
+    setValue("keyword", "");
+  };
 
   // console.log(homeMatch, tvMatch);
   const openSearch = () => {
@@ -151,6 +168,7 @@ const Header = () => {
     >
       <Col>
         <Logo
+          onClick={goToMain}
           variants={logoVariants}
           initial="normal"
           whileHover="active"
@@ -163,7 +181,7 @@ const Header = () => {
         <Items>
           <Item>
             <Link to={"/"}>
-              Home {homeMatch && <Circle layoutId="circle" />}
+              Home {(homeMatch || modalMatch) && <Circle layoutId="circle" />}
             </Link>
           </Item>
           <Item>
@@ -174,8 +192,9 @@ const Header = () => {
         </Items>
       </Col>
       <Col>
-        <Search>
+        <Search onSubmit={handleSubmit(onValid)}>
           <Input
+            {...register("keyword", { required: true, minLength: 2 })}
             type="text"
             placeholder="Search for MOVIE or TV"
             animate={inputAnimation}

@@ -10,7 +10,7 @@ export interface Movie {
   overview: string;
   vote_average: number;
   vote_count: number;
-  release_Data: string;
+  release_date: string;
   adult: boolean;
 }
 
@@ -31,3 +31,16 @@ export const getMovies = () => {
     `${BASE_PATH}/movie/now_playing?api_key=${API_KEY}`
   ).then((response) => response.json());
 };
+
+export const searchContents = (keyword: string | null) => {
+  return fetch(
+    `${BASE_PATH}/search/multi?api_key=${API_KEY}&query=${keyword}`
+  ).then((response) => response.json());
+};
+
+
+export const searchGenres = () => {
+  return fetch(
+    `${BASE_PATH}/genre/movie/list?api_key=${API_KEY}`
+  ).then((response) => response.json());
+}
