@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Tv from "./pages/Tv";
 import Search from "./pages/Search";
 import WrongAddress from "./pages/WrongAddress";
+import PreLogin from "./pages/Pre-Login";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/pre-login",
+        element: <PreLogin />,
       },
       {
         path: "/movies/:movieId",
