@@ -16,13 +16,7 @@ const MainContainer = styled.main`
 
 const PLInner = () => (
   <MainContainer>
-    <Slide
-      images={[
-        "./assets/images/main/revenant_d.jpeg",
-        "./assets/images/main/avatar_d.jpeg",
-        "./assets/images/main/invasion_d.jpeg",
-      ]}
-    />
+    <Slide />
     <PopularContent />
     <TargetValueBanner />
     <Variety />

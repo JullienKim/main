@@ -64,7 +64,7 @@ const PLHeader = () => {
     <HeaderContainer isHidden={isHidden}>
       <Navigation>
         <a href="/">
-          <DisneyIcon src="./public/logo.svg" alt="Disney Logo" />
+          <DisneyIcon src="./assets/images/aurora.png" alt="Aurora Logo" />
         </a>
         <SignUpButton href="/login">로그인</SignUpButton>
       </Navigation>

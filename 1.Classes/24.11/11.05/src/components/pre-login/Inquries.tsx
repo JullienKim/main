@@ -7,7 +7,7 @@ import PLTitle from "./PLTitle";
 const InquiriesContainer = styled.section`
   max-width: 100%;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 0;
 `;
 
 const Inquiries = () => {

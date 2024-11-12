@@ -10,12 +10,24 @@ const GridList = styled.ul`
   gap: 24px;
   padding-left: 0;
   list-style: none;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 12px;
+  }
 `;
 
 const GridItem = styled.li`
   flex: 1 1 calc(33.33% - 16px);
   text-align: left;
   padding: 10px;
+  min-width: 280px;
+
+  @media (max-width: 768px) {
+    flex: 1 1 auto;
+    min-width: 70vw;
+  }
 `;
 
 const BenefitImage = styled.img`
