@@ -7,7 +7,7 @@ const StyledPLTitle = styled.h2`
   color: #f9f9f9;
   line-height: 1.2;
   margin-bottom: 16px;
-  @media (max-width: 768px) {
+  @media (max-width: 1026px) {
     font-size: 32px;
   }
 `;

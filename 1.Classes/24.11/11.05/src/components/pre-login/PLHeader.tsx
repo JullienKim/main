@@ -6,10 +6,9 @@ const HeaderContainer = styled.header<{ isHidden: boolean }>`
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: #040714;
+  background-color: ${({ isHidden }) => (isHidden ? "transparent" : "#040714")};
   z-index: 100;
   transition: all 0.2s ease;
-  opacity: ${({ isHidden }) => (isHidden ? 0 : 1)};
 `;
 
 const Navigation = styled.nav`
@@ -20,7 +19,7 @@ const Navigation = styled.nav`
   justify-content: space-between;
 `;
 
-const DisneyIcon = styled.img`
+const AuroraIcon = styled.img`
   width: 80px;
   padding: 0 14px;
   margin: 5px;
@@ -64,7 +63,9 @@ const PLHeader = () => {
     <HeaderContainer isHidden={isHidden}>
       <Navigation>
         <a href="/">
-          <DisneyIcon src="./assets/images/aurora.png" alt="Aurora Logo" />
+          {!isHidden && (
+            <AuroraIcon src="./assets/images/aurora.png" alt="Aurora Logo" />
+          )}
         </a>
         <SignUpButton href="/login">로그인</SignUpButton>
       </Navigation>

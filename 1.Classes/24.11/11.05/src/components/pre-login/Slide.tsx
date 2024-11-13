@@ -1,81 +1,126 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import PLTitle from "./PLTitle";
 
 const MainContainer = styled.section`
   display: flex;
-  min-height: 75vh;
-  justify-content: center;
+  min-height: 80vh;
+  justify-content: left;
   position: relative;
-  padding-bottom: 8vw;
+  padding: 6vw;
   text-align: center;
-  
-  @media (max-width: 768px) {
-    min-height: 70vh;
-    padding: 40vw 5vw 20vw;
+
+  @media (max-width: 1024px) {
+    min-height: 900px;
+    height: 100vw;
+    padding: 40vw 5vw 3vw;
   }
-  `;
+  @media (max-width: 768px) {
+    height: fit-content;
+    justify-content: center;
+    min-height: 120vw;
+    padding: 45vw 5vw 3vw;
+  }
+`;
 
 const MainBox = styled.div`
-  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vw;
+  width: 100%;
   z-index: 1;
   text-align: center;
-  
+
   @media (min-width: 1025px) {
+    gap: 20px;
+    align-items: start;
+    text-align: left;
     max-width: 640px;
   }
-  `;
+`;
 
 const MainLogo = styled.img`
   width: 130px;
-  margin-bottom: 2vw;
-  
+
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 160px;
   }
-  
+
   @media (min-width: 1025px) {
     width: 180px;
   }
-  `;
+`;
 
 const PurchaseForm = styled.form`
-  border: 1px solid #f00;
+  width: 100%;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  gap: 20px;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 24px;
 
   @media (min-width: 769px) {
     flex-direction: row;
+    width: 600px;
+  }
+  @media (min-width: 1025px) {
+    width: 44vw;
+    max-width: 660px;
+  }
+`;
+
+const PlanContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  text-align: left;
+  gap: 8px;
+  @media (max-width: 1024px) {
+    align-items: center;
+    /* text-align: center; */
   }
 `;
 
 const PurchaseButton = styled.button`
   width: 100%;
-  height: 50px;
-  padding: 0 44px;
+  max-width: 320px;
+  padding: 16px 24px;
   border: none;
   border-radius: 4px;
   background-color: #02d6e8;
   color: #02172a;
   font-size: 18px;
   font-weight: 400;
-  letter-spacing: 1px;
   cursor: pointer;
-  transition: background-color 0.5s ease;
+  transition: opacity 0.5s ease;
 
-  @media (min-width: 769px) {
+  @media (max-width: 768px) {
     font-size: 16px;
-    width: 40%;
-    border-radius: 0 4px 4px 0;
-    margin-top: 0;
+    padding: 12px 24px;
   }
 
   &:hover {
-    /* background-color: #016cf9; */
     opacity: 0.8;
+  }
+`;
+
+const PlanDescription = styled.p`
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 0;
+`;
+
+const GeneralDescrpt = styled.p`
+  a {
+    text-decoration: underline;
+    color: #f9f9f9;
+    transition: color 0.3s ease;
+    &:hover {
+      color: #02d6e8;
+    }
   }
 `;
 
@@ -88,21 +133,31 @@ const SlideContainer = styled.div`
 `;
 
 const SlideNav = styled.div`
-  font-size: 100px;
   display: flex;
+  position: absolute;
+  right: 10px;
+  top: 8vh;
   flex-direction: column;
   align-items: center;
   width: 20px;
   height: 18vh;
-  position: absolute;
-  right: 10px;
-  top: 8vh;
+  font-size: 100px;
   z-index: 2;
   gap: 2px;
 
   @media (min-width: 769px) {
     width: 60vw;
     height: 20px;
+    top: auto;
+    flex-direction: row;
+    left: 50%;
+    bottom: 60px;
+    transform: translateX(-50%);
+  }
+  @media (min-width: 1025px) {
+    width: 60vw;
+    height: 20px;
+    top: auto;
     flex-direction: row;
     left: 50%;
     bottom: 60px;
@@ -114,7 +169,7 @@ const SlideButton = styled.button<{ isActive: boolean }>`
   width: ${({ isActive }) => (isActive ? "4px" : "2px")};
   height: 100%;
   background-color: ${({ isActive }) => (isActive ? "#f9f9f9" : "silver")};
-  opacity: ${({ isActive }) => (isActive ? 0.5 : 0.2)};
+  opacity: ${({ isActive }) => (isActive ? 0.6 : 0.3)};
   border: none;
   cursor: pointer;
   transition: background-color 0.5s ease;
@@ -125,14 +180,18 @@ const SlideButton = styled.button<{ isActive: boolean }>`
   }
 
   @media (min-width: 769px) {
-    width: auto;
-    height: 6px; // Make the indicator thicker for larger screens
+    width: 60vw;
+    height: ${({ isActive }) => (isActive ? "4px" : "2px")};
+    &:hover {
+      width: 60vw;
+      height: 3px;
+    }
   }
 `;
 
 const SlideImageContainer = styled.div<{ isActive: boolean }>`
   opacity: ${({ isActive }) => (isActive ? 1 : 0)};
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
   position: absolute;
   top: 0;
   left: 0;
@@ -147,13 +206,14 @@ const SlideImageContainer = styled.div<{ isActive: boolean }>`
 const SlideTextBox = styled.div`
   position: absolute;
   top: 16px;
-  right: 80px;
   left: 16px;
   font-size: 12px;
   line-height: 16px;
+  text-align: left;
   z-index: 1;
 
   @media (min-width: 769px) {
+    top: auto;
     bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
@@ -168,14 +228,35 @@ const SlideBackgroundImage = styled.img`
   object-fit: cover;
 `;
 
-const PriceText = styled.p`
-  font-size: 12px;
-  line-height: 15px;
-  margin-bottom: 0;
+const PlayPauseButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 10vw;
+  bottom: 50px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  color: #f9f9f9;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 1s ease;
+  @media (max-width: 768px) {
+    right: 1px;
+    top: 28vh;
+  }
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
 `;
 
-const SlideSection: React.FC = () => {
+const SlideSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   const slides = [
     {
@@ -204,30 +285,74 @@ const SlideSection: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    if (!isPlaying) return;
+
+    const interval = setInterval(() => {
+      setActiveSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isPlaying, activeSlide, slides.length]);
+
+  const togglePlayPause = () => {
+    setIsPlaying((prev) => !prev);
+  };
+
+  const handleSlideClick = (index: number) => {
+    setActiveSlide(index);
+    setIsPlaying(false); // Pause auto-play when manually selecting a slide
+  };
+
   return (
     <MainContainer>
       <MainBox>
         <MainLogo src="./assets/images/aurora.png" alt="Logo" />
-        <h1>
-          이 모든 이야기가 여기에
+        <PLTitle>
+          꿈속의 모든 이야기가 여기에
           <br />
           지금 스트리밍 중
-        </h1>
-        <PurchaseForm>
-          <PurchaseButton>오로라 스탠다드</PurchaseButton>
-          <PurchaseButton>오로라 프리미엄</PurchaseButton>
-        </PurchaseForm>
-        <PriceText>
-          *유료 멤버십 월 9,900원 / 연 99,000원
+        </PLTitle>
+
+        <GeneralDescrpt>
+          <a href="login">오로라+ 프리미엄 연간 멤버십</a>을 구독하고 최대 16%
+          할인*을 받으세요.
           <br />
-          *연간 구독 시 최대 16% 할인된 가격
-        </PriceText>
+          연간 멤버십을 포함한 멤버십 유형별 세부 정보를 확인해 보세요.
+          <br /> 오로라+ 스탠다드는 월 9,900원부터, 오로라+ 프리미엄은 월
+          13,900원부터 구독 가능합니다.
+        </GeneralDescrpt>
+                <PurchaseForm>
+          <PlanContainer>
+            <PurchaseButton>오로라+ 스탠다드</PurchaseButton>
+            <PlanDescription>
+              최대 1080p Full HD 비디오
+              <br />
+              최대 5.1 오디오
+              <br />
+              최대 2대 기기 동시 스트리밍
+            </PlanDescription>
+          </PlanContainer>
+          <PlanContainer>
+            <PurchaseButton>오로라+ 프리미엄</PurchaseButton>
+            <PlanDescription>
+              최대 4K UHD & HDR 비디오
+              <br />
+              최대 Dolby Atmos 오디오
+              <br />
+              최대 4대 기기 동시 스트리밍
+            </PlanDescription>
+          </PlanContainer>
+        </PurchaseForm>
+        <h6>
+          *월간 멤버십 12개월 구독료 대비 할인된 가격입니다. 추가 약관 적용.
+        </h6>
       </MainBox>
       <SlideContainer>
         {slides.map((slide, index) => (
           <SlideImageContainer key={index} isActive={index === activeSlide}>
             <SlideBackgroundImage
-              src={window.innerWidth < 768 ? slide.mobile : slide.desktop}
+              src={window.innerWidth < 1025 ? slide.mobile : slide.desktop}
               alt={slide.title}
             />
             <SlideTextBox>
@@ -241,10 +366,13 @@ const SlideSection: React.FC = () => {
             <SlideButton
               key={index}
               isActive={index === activeSlide}
-              onClick={() => setActiveSlide(index)}
+              onClick={() => handleSlideClick(index)}
             />
           ))}
         </SlideNav>
+        <PlayPauseButton onClick={togglePlayPause}>
+          {isPlaying ? "||" : "▶️"}
+        </PlayPauseButton>
       </SlideContainer>
     </MainContainer>
   );

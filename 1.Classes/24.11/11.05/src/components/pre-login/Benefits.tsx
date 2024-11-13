@@ -11,7 +11,7 @@ const GridList = styled.ul`
   padding-left: 0;
   list-style: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1025px) {
     flex-direction: row;
     overflow-x: auto;
     gap: 12px;
@@ -24,7 +24,7 @@ const GridItem = styled.li`
   padding: 10px;
   min-width: 280px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1025px) {
     flex: 1 1 auto;
     min-width: 70vw;
   }

@@ -5,12 +5,16 @@ const AccordionContainer = styled.div`
   background-color: #13151d;
   margin-top: 16px;
   width: 100%;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #2a2d38;
+  }
 `;
 
 const AccordionButton = styled.button<{ isOpen: boolean }>`
   width: 100%;
   padding: 24px;
-  background-color: #12151d;
+  background-color: transparent;
   color: #f9f9f9;
   border: none;
   text-align: left;
