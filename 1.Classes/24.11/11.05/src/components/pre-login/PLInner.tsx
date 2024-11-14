@@ -9,7 +9,7 @@ import Devices from "./Device";
 import Inquiries from "./Inquries";
 import OriginalMovies from "./OriginalMovies";
 import Variety from "./Variety";
-import PlanGuide from "./PlanGuide";
+import FadeIn from "./FadeIn";
 
 const MainContainer = styled.main`
   padding-bottom: 8vw;
@@ -19,12 +19,21 @@ const PLInner = () => (
   <MainContainer>
     <Slide />
     <PopularContent />
-    <Devices />
-    <TargetValueBanner />
-    <Variety />
-    <OriginalMovies />
-    <Benefits />
-    <PlanGuide />
+    <FadeIn>
+      <Devices />
+    </FadeIn>
+    <FadeIn>
+      <TargetValueBanner />
+    </FadeIn>
+    <FadeIn>
+      <Variety />
+    </FadeIn>
+    <FadeIn>
+      <OriginalMovies />
+    </FadeIn>
+    <FadeIn>
+      <Benefits />
+    </FadeIn>
     <Inquiries />
   </MainContainer>
 );

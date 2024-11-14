@@ -1,15 +1,14 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React, { useRef, useEffect, useState } from "react";
+import styled, { keyframes, css } from "styled-components";
 import { SectionContainer } from "../../Root";
 import PLTitle from "./PLTitle";
 
-// Animation to move content from right to left
-const scrollAnimation = keyframes`
+const createScrollAnimation = (width: number) => keyframes`
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-${width}px);
   }
 `;
 
@@ -18,17 +17,29 @@ const ScrollingContainer = styled.div`
   width: 100%;
 `;
 
-const GridList = styled.ul`
+const GridList = styled.ul<{ scrollWidth: number }>`
   display: flex;
-  flex-wrap: nowrap;  /* Prevents wrapping */
+  flex-wrap: nowrap;
   list-style: none;
+  gap: 20px;
   padding-left: 0;
   margin: 0;
-  animation: ${scrollAnimation} 30s linear infinite;
+  ${({ scrollWidth }) =>
+    css`
+      animation: ${createScrollAnimation(scrollWidth)} 30s linear infinite;
+    `}
 `;
 
 const GridItem = styled.li`
   flex: 0 0 auto;
+  width: 300px; /* Medium screens */
+  @media (max-width: 1024px) {
+    width: 250px; 
+  }
+
+  @media (max-width: 768px) {
+    width: 200px; 
+  }
 `;
 
 const ContentImage = styled.img`
@@ -38,6 +49,17 @@ const ContentImage = styled.img`
 `;
 
 const PopularContent: React.FC = () => {
+  const [scrollWidth, setScrollWidth] = useState(0);
+  const listRef = useRef<HTMLUListElement>(null);
+
+  // Update the scroll width based on the GridList's total width
+  useEffect(() => {
+    if (listRef.current) {
+      const listWidth = listRef.current.scrollWidth / 2; // Width of one set of items
+      setScrollWidth(listWidth);
+    }
+  }, [listRef]);
+
   const items = Array.from({ length: 9 }).map((_, index) => (
     <GridItem key={index}>
       <ContentImage
@@ -51,7 +73,7 @@ const PopularContent: React.FC = () => {
     <SectionContainer>
       <PLTitle>인기 콘텐츠</PLTitle>
       <ScrollingContainer>
-        <GridList>
+        <GridList ref={listRef} scrollWidth={scrollWidth}>
           {items}
           {items /* Duplicate items for seamless scrolling */}
         </GridList>

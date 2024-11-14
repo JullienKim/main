@@ -3,12 +3,6 @@ import { SectionContainer } from "../../Root";
 import styled from "styled-components";
 import PLTitle from "./PLTitle";
 
-const Title = styled.h2`
-  font-size: 28px;
-  margin-bottom: 24px;
-  color: #f9f9f9;
-`;
-
 const GridList = styled.ul`
   display: flex;
   flex-wrap: wrap;

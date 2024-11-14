@@ -11,9 +11,9 @@ const MainContainer = styled.section`
   text-align: center;
 
   @media (max-width: 1024px) {
-    min-height: 900px;
+    min-height: 930px;
     height: 100vw;
-    padding: 40vw 5vw 3vw;
+    padding: 35vw 5vw 3vw;
   }
   @media (max-width: 768px) {
     height: fit-content;
@@ -52,7 +52,49 @@ const MainLogo = styled.img`
   }
 `;
 
-const PurchaseForm = styled.form`
+const GeneralDescrpt = styled.p`
+  a {
+    text-decoration: underline;
+    color: #f9f9f9;
+    transition: color 0.3s ease;
+    &:hover {
+      color: #02e8c5;
+    }
+  }
+`;
+
+const SignUpForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const EmailInput = styled.input`
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 16px 24px;
+  border-radius: 4px;
+  font-size: 18px;
+  outline: none;
+  color: #f9f9f9;
+  border: 1px solid #f9f9f9;
+  transition: background 0.5s ease;
+  @media (max-width: 768px) {
+    max-width: 320px;
+    font-size: 16px;
+  }
+  &:hover,
+  &:focus {
+    background-color: #f9f9f9;
+    color: #040714;
+  }
+`;
+
+const PurchaseContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -90,7 +132,7 @@ const PurchaseButton = styled.button`
   padding: 16px 24px;
   border: none;
   border-radius: 4px;
-  background-color: #02d6e8;
+  background-color: #02e8c5;
   color: #02172a;
   font-size: 18px;
   font-weight: 400;
@@ -113,16 +155,7 @@ const PlanDescription = styled.p`
   margin-bottom: 0;
 `;
 
-const GeneralDescrpt = styled.p`
-  a {
-    text-decoration: underline;
-    color: #f9f9f9;
-    transition: color 0.3s ease;
-    &:hover {
-      color: #02d6e8;
-    }
-  }
-`;
+
 
 const SlideContainer = styled.div`
   position: absolute;
@@ -147,18 +180,18 @@ const SlideNav = styled.div`
 
   @media (min-width: 769px) {
     width: 60vw;
+    flex-direction: row;
     height: 20px;
     top: auto;
-    flex-direction: row;
     left: 50%;
     bottom: 60px;
     transform: translateX(-50%);
   }
   @media (min-width: 1025px) {
     width: 60vw;
+    flex-direction: row;
     height: 20px;
     top: auto;
-    flex-direction: row;
     left: 50%;
     bottom: 60px;
     transform: translateX(-50%);
@@ -322,28 +355,31 @@ const SlideSection = () => {
           <br /> 오로라+ 스탠다드는 월 9,900원부터, 오로라+ 프리미엄은 월
           13,900원부터 구독 가능합니다.
         </GeneralDescrpt>
-                <PurchaseForm>
-          <PlanContainer>
-            <PurchaseButton>오로라+ 스탠다드</PurchaseButton>
-            <PlanDescription>
-              최대 1080p Full HD 비디오
-              <br />
-              최대 5.1 오디오
-              <br />
-              최대 2대 기기 동시 스트리밍
-            </PlanDescription>
-          </PlanContainer>
-          <PlanContainer>
-            <PurchaseButton>오로라+ 프리미엄</PurchaseButton>
-            <PlanDescription>
-              최대 4K UHD & HDR 비디오
-              <br />
-              최대 Dolby Atmos 오디오
-              <br />
-              최대 4대 기기 동시 스트리밍
-            </PlanDescription>
-          </PlanContainer>
-        </PurchaseForm>
+        <SignUpForm>
+          <EmailInput placeholder="이메일로 바로 가입하세요!" />
+          <PurchaseContainer>
+            <PlanContainer>
+              <PurchaseButton>오로라+ 스탠다드</PurchaseButton>
+              <PlanDescription>
+                최대 1080p Full HD 비디오
+                <br />
+                최대 5.1 오디오
+                <br />
+                최대 2대 기기 동시 스트리밍
+              </PlanDescription>
+            </PlanContainer>
+            <PlanContainer>
+              <PurchaseButton>오로라+ 프리미엄</PurchaseButton>
+              <PlanDescription>
+                최대 4K UHD & HDR 비디오
+                <br />
+                최대 Dolby Atmos 오디오
+                <br />
+                최대 4대 기기 동시 스트리밍
+              </PlanDescription>
+            </PlanContainer>
+          </PurchaseContainer>
+        </SignUpForm>
         <h6>
           *월간 멤버십 12개월 구독료 대비 할인된 가격입니다. 추가 약관 적용.
         </h6>

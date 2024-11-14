@@ -19,7 +19,7 @@ const GridList = styled.ul`
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     .mobile-two-column {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -39,12 +39,14 @@ const GridItem = styled.li`
 
 const DeviceImage = styled.img`
   width: 100%;
-  margin-bottom: 8px;
 `;
 
 const DeviceTitle = styled.h3`
-  font-size: 22px;
-  margin-top: 0;
+  font-size: 24px;
+  margin-bottom: 10px;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const Devices = () => (

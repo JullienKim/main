@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import theme from "./theme";
 import Header from "./components/Header";
+import TopBtn from "./components/TopBtn";
 
 const Globalstyle = createGlobalStyle`
   *{
@@ -46,6 +47,7 @@ const App = () => {
         <Globalstyle />
         {/* <Header /> */}
         <Outlet />
+        <TopBtn />
       </ThemeProvider>
     </>
   );

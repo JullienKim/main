@@ -37,7 +37,7 @@ const BenefitImage = styled.img`
 
 const BenefitTitle = styled.h4`
   font-size: 22px;
-  margin-top: 0;
+  margin-bottom: 8px;
 `;
 
 const BenefitDescription = styled.p`

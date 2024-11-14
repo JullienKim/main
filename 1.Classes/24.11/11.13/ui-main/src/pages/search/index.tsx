@@ -1,15 +1,26 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { useRouter } from "next/router";
+import SearchableLayout from "@/components/searchable-layout";
+import BookItem from "@/components/book-item";
 
-const Search = () => {
-  const router = useRouter();
+const Page = () => {
+  // const router = useRouter();
   // console.log(router);
-  const {
-    query: { q },
-  } = router;
+  // const {
+  //   query: { q },
+  // } = router;
   // console.log(q);
 
-  return <h1>Search: {q}</h1>;
+  // return <div>Search: {q}</div>;
+  return <div>
+    {books.map((book)=> (
+    <BookItem key={book.id{...book}}/>)
+  )}
+  </div>;
 };
 
-export default Search;
+Page.getLayout = (page: ReactNode) => {
+  return <SearchableLayout>{page}</SearchableLayout>;
+};
+
+export default Page;

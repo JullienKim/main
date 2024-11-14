@@ -1,4 +1,4 @@
-// import
+import { DoublyLinkedList } from "./DoublyLinkedList.mjs";
 
 class HashData {
   constructor(key, value) {
@@ -14,6 +14,7 @@ class HashTable {
       this.arr[i] = new DoublyLinkedList();
     }
   }
+
   hashFunction(number) {
     return number % 10;
   }
@@ -28,19 +29,20 @@ class HashTable {
       if (currentNode.data.key === key) {
         return currentNode.data.value;
       }
-      currentNode = currentNode.Next;
+      currentNode = currentNode.next;
     }
     return null;
   }
+
   remove(key) {
     let list = this.arr[this.hashFunction(key)];
     let currentNode = list.head;
     let deletedIndex = 0;
     while (currentNode !== null) {
       if (currentNode.data.key === key) {
-        return list.deleteAt();
+        return list.deleteAt(deletedIndex);
       }
-      currentNode = currentNode.Next;
+      currentNode = currentNode.next;
       deletedIndex++;
     }
     return null;
