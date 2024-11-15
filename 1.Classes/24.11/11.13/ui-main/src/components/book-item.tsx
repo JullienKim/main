@@ -13,27 +13,18 @@ const BookItem = ({
   coverImgUrl,
 }: BookData) => {
   return (
-    <Link className={styled.link} href={`/book/${id}`}>
-      <img src={coverImgUrl} alt="" />
+    <Link className={style.container} href={`/book/${id}`}>
+      <img src={coverImgUrl} />
       <div>
-        <div className={style.title} {
-          constructor(parameters) {
-            
-          }
-        }>{title}</div>
-        <div className={style.subTitle} {
-          constructor(parameters) {
-            
-          }
-        }>{subTitle}</div>
+        <div className={style.title}>{title}</div>
+        <div className={style.subtitle}>{subTitle}</div>
         <br />
-        <div>
-          {author}|{publisher}
+        <div className={style.author}>
+          {author} | {publisher}
         </div>
       </div>
     </Link>
   );
-  return <h1>도서아이템</h1>;
 };
 
 export default BookItem;

@@ -9,12 +9,36 @@ const BtnContainer = styled.div`
   width: 60px;
   height: 60px;
   background: rgba(0, 0, 0, 0.5);
-  border: 1px solid #f9f9f9;
   border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #F9F9F9;
+  }
+`;
+
+const BtnImg = styled.img`
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg);
+  &:hover{
+    filter: invert();
+  }
 `;
 
 const TopBtn = () => {
-  return <BtnContainer></BtnContainer>;
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <BtnContainer onClick={scrollToTop}>
+      <BtnImg src="./assets/icons/benefits/3.svg" alt="top button" />
+    </BtnContainer>
+  );
 };
 
 export default TopBtn;

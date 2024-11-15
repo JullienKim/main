@@ -13,7 +13,7 @@ const MainContainer = styled.section`
   @media (max-width: 1024px) {
     min-height: 930px;
     height: 100vw;
-    padding: 35vw 5vw 3vw;
+    padding: 38vw 5vw 3vw;
   }
   @media (max-width: 768px) {
     height: fit-content;
@@ -155,8 +155,6 @@ const PlanDescription = styled.p`
   margin-bottom: 0;
 `;
 
-
-
 const SlideContainer = styled.div`
   position: absolute;
   bottom: 0;
@@ -201,7 +199,7 @@ const SlideNav = styled.div`
 const SlideButton = styled.button<{ isActive: boolean }>`
   width: ${({ isActive }) => (isActive ? "4px" : "2px")};
   height: 100%;
-  background-color: ${({ isActive }) => (isActive ? "#f9f9f9" : "silver")};
+  background-color: ${({ isActive }) => (isActive ? "#F9F9F9" : "silver")};
   opacity: ${({ isActive }) => (isActive ? 0.6 : 0.3)};
   border: none;
   cursor: pointer;
@@ -259,6 +257,7 @@ const SlideBackgroundImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
 `;
 
 const PlayPauseButton = styled.button`
@@ -290,33 +289,44 @@ const PlayPauseButton = styled.button`
 const SlideSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const slides = [
     {
-      mobile: "./assets/images/main/revenant_m.jpeg",
-      desktop: "./assets/images/main/revenant_d.jpeg",
-      title: "악귀",
-      subtitle: "지금 스트리밍 중",
+      mobile: "./assets/images/main/alien_m.jpeg",
+      tablet: "./assets/images/main/alien_m.jpeg",
+      desktop: "./assets/images/main/alien_d.jpeg",
+      title: "에이리언: 로물루스",
+      subtitle: "11월 21일 스트리밍",
     },
     {
       mobile: "./assets/images/main/avatar2_m.jpeg",
+      tablet: "./assets/images/main/avatar2_m.jpeg",
       desktop: "./assets/images/main/avatar_d.jpeg",
       title: "아바타: 물의 길",
       subtitle: "지금 스트리밍 중",
     },
     {
       mobile: "./assets/images/main/invasion_m.jpeg",
+      tablet: "./assets/images/main/invasion_m.jpeg",
       desktop: "./assets/images/main/invasion_d.jpeg",
       title: "시크릿 인베이젼",
       subtitle: "지금 스트리밍 중",
     },
     {
-      mobile: "./assets/images/main/the_zone_m.jpeg",
-      desktop: "./assets/images/main/the_zone_d.jpeg",
-      title: "더 존: 버텨야 산다 2",
+      mobile: "./assets/images/main/deadF_m.jpeg",
+      tablet: "./assets/images/main/deadF_t.jpeg",
+      desktop: "./assets/images/main/deadF_d.jpeg",
+      title: "데드풀과 울버린",
       subtitle: "지금 스트리밍 중",
     },
   ];
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (!isPlaying) return;
@@ -334,7 +344,7 @@ const SlideSection = () => {
 
   const handleSlideClick = (index: number) => {
     setActiveSlide(index);
-    setIsPlaying(false); // Pause auto-play when manually selecting a slide
+    setIsPlaying(false);
   };
 
   return (
@@ -350,33 +360,22 @@ const SlideSection = () => {
         <GeneralDescrpt>
           <a href="login">오로라+ 프리미엄 연간 멤버십</a>을 구독하고 최대 16%
           할인*을 받으세요.
-          <br />
-          연간 멤버십을 포함한 멤버십 유형별 세부 정보를 확인해 보세요.
+          {/* ( <a href="/">멤버십 유형별 세부 정보</a> ) */}
           <br /> 오로라+ 스탠다드는 월 9,900원부터, 오로라+ 프리미엄은 월
           13,900원부터 구독 가능합니다.
+          <br />
+          <a href="/">멤버십 유형별 세부 정보</a>를 확인해보세요.
         </GeneralDescrpt>
         <SignUpForm>
           <EmailInput placeholder="이메일로 바로 가입하세요!" />
           <PurchaseContainer>
             <PlanContainer>
               <PurchaseButton>오로라+ 스탠다드</PurchaseButton>
-              <PlanDescription>
-                최대 1080p Full HD 비디오
-                <br />
-                최대 5.1 오디오
-                <br />
-                최대 2대 기기 동시 스트리밍
-              </PlanDescription>
+              <PlanDescription>최대 2대 기기 동시 스트리밍</PlanDescription>
             </PlanContainer>
             <PlanContainer>
               <PurchaseButton>오로라+ 프리미엄</PurchaseButton>
-              <PlanDescription>
-                최대 4K UHD & HDR 비디오
-                <br />
-                최대 Dolby Atmos 오디오
-                <br />
-                최대 4대 기기 동시 스트리밍
-              </PlanDescription>
+              <PlanDescription>최대 4대 기기 동시 스트리밍</PlanDescription>
             </PlanContainer>
           </PurchaseContainer>
         </SignUpForm>
@@ -388,7 +387,13 @@ const SlideSection = () => {
         {slides.map((slide, index) => (
           <SlideImageContainer key={index} isActive={index === activeSlide}>
             <SlideBackgroundImage
-              src={window.innerWidth < 1025 ? slide.mobile : slide.desktop}
+              src={
+                windowWidth < 768
+                  ? slide.mobile
+                  : windowWidth < 1025
+                  ? slide.tablet
+                  : slide.desktop
+              }
               alt={slide.title}
             />
             <SlideTextBox>

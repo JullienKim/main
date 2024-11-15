@@ -32,7 +32,7 @@ const GridList = styled.ul<{ scrollWidth: number }>`
 
 const GridItem = styled.li`
   flex: 0 0 auto;
-  width: 300px; /* Medium screens */
+  width: 300px;
   @media (max-width: 1024px) {
     width: 250px; 
   }
@@ -52,13 +52,21 @@ const PopularContent: React.FC = () => {
   const [scrollWidth, setScrollWidth] = useState(0);
   const listRef = useRef<HTMLUListElement>(null);
 
-  // Update the scroll width based on the GridList's total width
-  useEffect(() => {
+  const updateScrollWidth = () => {
     if (listRef.current) {
-      const listWidth = listRef.current.scrollWidth / 2; // Width of one set of items
+      const listWidth = listRef.current.scrollWidth / 2;
       setScrollWidth(listWidth);
     }
-  }, [listRef]);
+  }
+
+  useEffect(() => {
+    updateScrollWidth();
+    const handleResize = () => {
+      updateScrollWidth();
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const items = Array.from({ length: 9 }).map((_, index) => (
     <GridItem key={index}>
@@ -75,7 +83,7 @@ const PopularContent: React.FC = () => {
       <ScrollingContainer>
         <GridList ref={listRef} scrollWidth={scrollWidth}>
           {items}
-          {items /* Duplicate items for seamless scrolling */}
+          {items}
         </GridList>
       </ScrollingContainer>
     </SectionContainer>

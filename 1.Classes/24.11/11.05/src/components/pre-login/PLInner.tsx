@@ -10,6 +10,7 @@ import Inquiries from "./Inquries";
 import OriginalMovies from "./OriginalMovies";
 import Variety from "./Variety";
 import FadeIn from "./FadeIn";
+import PlanTable from "./PlanTable";
 
 const MainContainer = styled.main`
   padding-bottom: 8vw;
@@ -22,6 +23,7 @@ const PLInner = () => (
     <FadeIn>
       <Devices />
     </FadeIn>
+    <PlanTable />
     <FadeIn>
       <TargetValueBanner />
     </FadeIn>
