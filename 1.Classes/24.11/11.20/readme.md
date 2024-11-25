@@ -32,3 +32,20 @@
 /video/delete -> Delete Video
 /video/comments -> Comment Video
 /video/comments/delete -> Delete Comment
+
+Delet
+
+> All
+> 탈퇴//
+
+schema => 윤곽 // 형태
+=> user로부터 어떤 데이터를 수집 => 우리가 원하는 형태로 관리, 보관, 제어
+=>data model =>
+
+[
+{
+id:"Jullien"
+source: ".mp4"
+.....
+}
+]
