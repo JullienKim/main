@@ -33,19 +33,51 @@
 /video/comments -> Comment Video
 /video/comments/delete -> Delete Comment
 
-Delet
+//
+Create
+
+- video
+  > user / ID / createdAt / source etc...
+
+Read
+
+Upadte
+
+> user / ID / createdAt / source etc...
+
+Delete
 
 > All
-> 탈퇴//
+> 탈퇴 //
 
 schema => 윤곽 // 형태
-=> user로부터 어떤 데이터를 수집 => 우리가 원하는 형태로 관리, 보관, 제어
-=>data model =>
+=> user로부터 어떤 데이터를 수집 => 우리가 원하는 형태로 관리.보관.제어
+=> data model => data modeling
 
 [
 {
-id:"Jullien"
+id: "david"
 source: ".mp4"
 .....
-}
+},
+{
+id: "david"
+source: ".mp4"
+.....
+},
+{
+id: "david"
+source: ".mp4"
+.....
+},
+{
+id: "david"
+source: ".mp4"
+.....
+},
+{
+id: "david"
+source: ".mp4"
+.....
+},
 ]
