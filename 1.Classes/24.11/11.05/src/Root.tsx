@@ -36,6 +36,9 @@ const Globalstyle = createGlobalStyle`
 `;
 
 export const SectionContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 5.6vw;
   text-align: center;
 `;
